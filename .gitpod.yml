@@ -1,0 +1,19 @@
+tasks: 
+  - name: install google-cloud-sdk & gcloud configs
+    init: |
+      curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
+      tar -xvf google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
+      ./google-cloud-sdk/install.sh
+      rm google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
+      . ~/.bashrc # exec bash
+      gcloud auth login
+      read -p "Enter Your GCP Project ID: " GCP_ID
+      gcloud config set project $GCP_ID
+      gcloud config set run/region asia-northeast1
+      export GCLOUD_PROJECT=$GCP_ID
+      eval "echo -e '\nexport GCLOUD_PROJECT="$GCP_ID"' >> ~/.bashrc"
+      gcloud auth application-default login
+      # git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
+      # cd python-docs-samples/run/idp-sql/
+      read -p "Enter Your GCR deploy Name: " GCR_ID
+      sed -e "s/GCR_ID/$GCR_ID/g" cloud_run.sh.bak | sed -e "s/GCP_ID/$GCP_ID/g" > cloud_run.sh
