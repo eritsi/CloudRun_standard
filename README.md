@@ -26,3 +26,9 @@ https://discuss.streamlit.io/t/app-in-streamlit-cloud-not-running-in-the-same-wa
   
 GCR上でのjupyterlabにおけるContent Security Policy問題  
 https://github.com/cameronraysmith/notebooks/blob/master/etc/jupyter_notebook_config.py
+
+## References.
+Special thanks to the following posts.  
+https://medium.com/dsights/streamlit-deployment-on-google-cloud-serverless-container-platform-1a8330d29062  
+
+https://medium.com/kunder/deploying-dash-to-cloud-run-5-minutes-c026eeea46d4  
