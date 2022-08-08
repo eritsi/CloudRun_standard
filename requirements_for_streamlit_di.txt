@@ -18,3 +18,4 @@ optuna
 pandas_gbq
 scikit-learn
 lightgbm
+protobuf==3.20.*

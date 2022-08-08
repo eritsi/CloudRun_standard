@@ -4,7 +4,7 @@
 - Cloud Runのデプロイ名を指定する[-は使用できるが、_は使用できない]
 
 ## 基本
-sh cloud_run.sh <Dockerfileの名前>
+sh cloud_run.sh <Dockerfileの名前.Dockerfile>
 - (必要性確認中)自分のGoogleアカウント、リージョンをリストから選んで再設定する
 - dockerコマンドが進行
 - `Error response from daemon: No such image:` と出ていたらDockerファイルのミス。  

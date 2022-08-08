@@ -14,3 +14,4 @@ xlrd==2.0.1
 keras
 tensorflow
 mlxtend
+protobuf==3.20.*
