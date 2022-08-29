@@ -1,12 +1,12 @@
 tasks: 
   - name: install google-cloud-sdk & gcloud configs
     init: |
-      curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
-      tar -xvf google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
+      curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-393.0.0-linux-x86_64.tar.gz
+      tar -xvf google-cloud-cli-393.0.0-linux-x86_64.tar.gz
       ./google-cloud-sdk/install.sh
-      rm google-cloud-sdk-358.0.0-linux-x86_64.tar.gz
+      rm google-cloud-cli-393.0.0-linux-x86_64.tar.gz
       . ~/.bashrc # exec bash
-      gcloud auth login
+      gcloud auth login --no-launch-browser
       read -p "Enter Your GCP Project ID: " GCP_ID
       gcloud config set project $GCP_ID
       gcloud config set run/region asia-northeast1
