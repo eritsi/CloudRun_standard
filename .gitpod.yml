@@ -12,7 +12,7 @@ tasks:
       gcloud config set run/region asia-northeast1
       export GCLOUD_PROJECT=$GCP_ID
       eval "echo -e '\nexport GCLOUD_PROJECT="$GCP_ID"' >> ~/.bashrc"
-      gcloud auth application-default login
+      gcloud auth application-default login --no-launch-browser
       # git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
       # cd python-docs-samples/run/idp-sql/
       read -p "Enter Your GCR deploy Name: " GCR_ID
