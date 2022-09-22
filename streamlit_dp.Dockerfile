@@ -25,10 +25,10 @@ COPY streamlit_dna.py .
 COPY streamlit_crypto.py .
 COPY streamlit_boston.py .
 COPY streamlit_basketball_app.py .
-COPY dna-logo.jpg ./example_dp/
-COPY crypto-logo.jpg ./example_dp/
-COPY penguins_cleaned.csv ./example_dp/
-COPY penguins_clf.pkl ./example_dp/
+COPY dna-logo.jpg .
+COPY crypto-logo.jpg .
+COPY penguins_cleaned.csv .
+COPY penguins_clf.pkl .
 
 
 CMD streamlit run compiled_app.py --server.port=${PORT}  --browser.serverAddress="0.0.0.0" 
