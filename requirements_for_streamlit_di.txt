@@ -18,4 +18,8 @@ optuna
 pandas_gbq
 scikit-learn
 lightgbm
+statsmodels
+seaborn
+japanize_matplotlib
+httpx_oauth
 protobuf==3.20.*

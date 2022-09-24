@@ -17,3 +17,13 @@ tasks:
       # cd python-docs-samples/run/idp-sql/
       read -p "Enter Your GCR deploy Name: " GCR_ID
       sed -e "s/GCR_ID/$GCR_ID/g" cloud_run.sh.bak | sed -e "s/GCP_ID/$GCP_ID/g" > cloud_run.sh
+      git clone https://github.com/eritsi/streamlit_standard
+      # if oauth needed, else just an ENTER
+      read -p "Enter Your oAuth GOOGLE_CLIENT_ID: " OAUTH_ID
+      read -p "Enter Your oAuth GOOGLE_CLIENT_SECRET: " OAUTH_SECRET
+      read -p "Enter Your oAuth REDIRECT_URI: " OAUTH_URI
+      # 3回目のsedでは、置き換えのURI内にスラッシュがある関係で、"s/string/path/to/something/g"というスラッシュ多すぎ問題を回避する必要あり
+      # sedのデリミタが実はスラッシュ以外でも良いことを利用して、重複のない@をデリミタに選んだ
+      # ref. https://stackoverflow.com/questions/9366816/sed-fails-with-unknown-option-to-s-error
+      sed -e "s/OAUTH_ID/$OAUTH_ID/g" streamlit_dp_oauth.Dockerfile.bak | sed -e "s/OAUTH_SECRET/$OAUTH_SECRET/g" | sed -e "s@OAUTH_URI@$OAUTH_URI@g" > streamlit_dp_oauth.Dockerfile
+

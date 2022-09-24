@@ -15,4 +15,8 @@ shap==0.40.0
 sklearn==0.0
 xlrd==2.0.1
 yfinance==0.1.67
+statsmodels
+seaborn
+japanize_matplotlib
+httpx_oauth
 protobuf==3.20.*
